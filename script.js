@@ -30,7 +30,6 @@ function submitTodo(event) {
   createTodo(title);
 
   $("#new-todo").val(null)
-  updateCounters();
 
   function createTodo(title) {
     var checkboxId = "todo-" + nextTodoId();
@@ -55,13 +54,13 @@ function submitTodo(event) {
     listItem.append(label);
 
     $("#todolist").append( listItem );
-
-    updateCounters();
   };
 
   function nextTodoId() {
     return $(".todo").length + 1;
   };
+
+  updateCounters();
 };
 
 function cleanUpDoneTodos(event) {
