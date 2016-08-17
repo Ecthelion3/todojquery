@@ -63,3 +63,11 @@ function submitTodo(event) {
     return $(".todo").length + 1;
   };
 };
+
+function cleanUpDoneTodos(event) {
+  event.preventDefault();
+  $.when($(".completed").remove())
+    .then(updateCounters);
+}
+
+$("#clean-up").bind('click', cleanUpDoneTodos);
